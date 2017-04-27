@@ -12,14 +12,18 @@ import GameKit
 
 class Event {
     
-    let name: String
-    let year: Int
+    var name: String
+    var year: Int
+    var dataURL: String
     
     
-    init(name: String, year: Int) {
+    init(name: String, year: Int, dataURL: String) {
         
         self.name = name
         self.year = year
+        self.dataURL = dataURL
+        
+        
         
     }
     
@@ -27,31 +31,31 @@ class Event {
 
 let events = [
     
-    Event(name: "European Union founded", year: 1951),
-    Event(name: "Berlin wall drops", year: 1989),
-    Event(name: "Bauhaus school of desing established", year: 1919),
-    Event(name: "Peking Olympics", year: 2008),
-    Event(name: "First summer Olympics in Athens", year: 1896),
-    Event(name: "Reinforced concrete first used", year: 1853),
-    Event(name: "Empire state building finished", year: 1931),
-    Event(name: "Soviet Union breakdown", year: 1990),
-    Event(name: "Fallingwater Frank Lloyd Wight house built", year: 1935),
-    Event(name: "Statue of liberty deployed", year: 1875),
-    Event(name: "Eiffel tower build", year: 1887),
-    Event(name: "Swiss born,modern architect Le Corbusier died", year: 1965),
-    Event(name: "Great recession began", year: 2007),
-    Event(name: "The Wright brothers first flight", year: 1903),
-    Event(name: "Internet development starts", year: 1950),
-    Event(name: "First moon landing", year: 1969),
-    Event(name: "Roberto Benigni Oscar won" , year: 1999),
-    Event(name: "Sochi winter Olympics", year: 2014),
-    Event(name: "Pretty Woman movie first cinema projection", year: 1990),
-    Event(name: "Laura Pausini Grammy awarded", year: 2005),
-    Event(name: "Macintosh released", year: 1984),
-    Event(name: "Frank Gehry Pritzker awarded", year: 1989),
-    Event(name: "EURO introduced", year: 1999),
-    Event(name: "iPad unveiled", year: 2010),
-    Event(name: "Current tallest skyscraper open", year: 2009)
+    Event(name: "European Union founded", year: 1950, dataURL:"https://europa.eu/european-union/about-eu/history_en"),
+    Event(name: "Berlin wall drops", year: 1989, dataURL: "https://en.wikipedia.org/wiki/Berlin_Blockade"),
+    Event(name: "Bauhaus school of design established", year: 1919, dataURL: "https://hr.wikipedia.org/wiki/Bauhaus"),
+    Event(name: "Peking Olympics", year: 2008, dataURL: "https://en.wikipedia.org/wiki/2008_Summer_Olympics"),
+    Event(name: "First summer Olympics in Athens", year: 1896, dataURL: "https://en.wikipedia.org/wiki/1896_Summer_Olympics"),
+    Event(name: "Reinforced concrete first used", year: 1853, dataURL: "https://en.wikipedia.org/wiki/Reinforced_concrete"),
+    Event(name: "Empire State building finished", year: 1931, dataURL: "https://hr.wikipedia.org/wiki/Empire_State_Building"),
+    Event(name: "Soviet Union breakdown", year: 1990, dataURL: "http://www.history.com/topics/cold-war/fall-of-soviet-union"),
+    Event(name: "Fallingwater Frank Lloyd Wight house built", year: 1935, dataURL: "https://en.wikipedia.org/wiki/Fallingwater"),
+    Event(name: "Statue of liberty deployed", year: 1875, dataURL: "https://hr.wikipedia.org/wiki/Kip_slobode"),
+    Event(name: "Eiffel tower build", year: 1887, dataURL: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
+    Event(name: "Swiss born,modern architect Le Corbusier died", year: 1965, dataURL: "https://en.wikipedia.org/wiki/Le_Corbusier"),
+    Event(name: "Great recession began", year: 2007, dataURL: "https://en.wikipedia.org/wiki/Great_Recession"),
+    Event(name: "The Wright brothers first flight", year: 1903, dataURL: "http://www.eyewitnesstohistory.com/wright.htm"),
+    Event(name: "Internet development starts", year: 1950, dataURL: "https://en.wikipedia.org/wiki/History_of_the_Internet"),
+    Event(name: "First moon landing", year: 1969, dataURL: "https://en.wikipedia.org/wiki/Moon_landing"),
+    Event(name: "Roberto Benigni Oscar won" , year: 1999, dataURL: "https://en.wikipedia.org/wiki/Roberto_Benigni"),
+    Event(name: "Sochi winter Olympics", year: 2014, dataURL: "https://en.wikipedia.org/wiki/2014_Winter_Olympics"),
+    Event(name: "Pretty Woman movie first cinema projection", year: 1990, dataURL: "https://en.wikipedia.org/wiki/Pretty_Woman"),
+    Event(name: "Laura Pausini Grammy awarded", year: 2005, dataURL: "http://www.billboard.com/articles/news/grammys/7655427/laura-pausini-grammy-nomination-reaction-video"),
+    Event(name: "Macintosh released", year: 1984, dataURL: "https://en.wikipedia.org/wiki/Macintosh"),
+    Event(name: "Frank Gehry Pritzker awarded", year: 1989, dataURL: "http://www.pritzkerprize.com/laureates/1989"),
+    Event(name: "EURO introduced", year: 1999, dataURL: "https://en.wikipedia.org/wiki/Euro"),
+    Event(name: "iPad unveiled", year: 2010, dataURL: "https://en.wikipedia.org/wiki/IPad_(1st_generation)"),
+    Event(name: "Current tallest skyscraper open", year: 2009, dataURL: "https://en.wikipedia.org/wiki/List_of_tallest_buildings_and_structures")
 ]
 
 
