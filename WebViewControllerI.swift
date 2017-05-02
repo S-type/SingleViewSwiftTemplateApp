@@ -10,17 +10,12 @@ import UIKit
 
 class WebViewControllerI: UIViewController {
 
-    @IBOutlet var webView: UIWebView!
-    
+    @IBOutlet var webView: UIWebView?
+    var webEventData : String = ""                                                ///STORED PROPERTY TO MANAGE FROM VIEWCONTROLLER
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        getEventURL()
-        
-        
-        // Do any additional setup after loading the view.
+        getWebEventData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +23,11 @@ class WebViewControllerI: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func getEventURL() {                                                           ///GET EVENT VIEW FROM WEB
+    func getWebEventData() {                                                       ///LOAD WEBVIEW WITH EVENT URL DATA
         
-        let eventURL = URL(string: "\(getRandomEventsData().dataURL)")
-        let eventURLRequest = URLRequest(url: eventURL!)
-        webView.loadRequest(eventURLRequest)
-        
+        webView?.loadRequest(URLRequest(url: URL(string: "\(webEventData)")!))
     }
-    
+
     
     @IBAction func dismissWebView(_ sender: Any) {                                 ///DISMISS CHILDVIEW
         
@@ -44,16 +35,5 @@ class WebViewControllerI: UIViewController {
         
         
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

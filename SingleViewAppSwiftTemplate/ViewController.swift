@@ -31,10 +31,13 @@ class ViewController: UIViewController {
     var gameTimer = Timer()
     var gameTimeLeft : Int = 60
     
-    @IBOutlet weak var event1: UILabel!
-    @IBOutlet weak var event2: UILabel!
-    @IBOutlet weak var event3: UILabel!
-    @IBOutlet weak var event4: UILabel!
+    var correctURLEventData : String = ""
+    
+    @IBOutlet var event1: UIButton!
+    @IBOutlet var event2: UIButton!
+    @IBOutlet var event3: UIButton!
+    @IBOutlet var event4: UIButton!
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var shakeLabel: UILabel!
     
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
     
     func displayEvents() {                                                ///DISPLAY EVENTS
         
+        roundPassed += 1
         gameTimeLeft = 60
         timerLabel.text = "0:\(String(gameTimeLeft))"
         shakeLabel.text = "Shake to complete"
@@ -111,10 +115,15 @@ class ViewController: UIViewController {
             
         }
         
-        event1.text = event1Data.name
-        event2.text = event2Data.name
-        event3.text = event3Data.name
-        event4.text = event4Data.name
+        event1.setTitle("\(event1Data.name)", for: .normal)
+        event2.setTitle("\(event2Data.name)", for: .normal)
+        event3.setTitle("\(event3Data.name)", for: .normal)
+        event4.setTitle("\(event4Data.name)", for: .normal)
+        
+        event1.titleLabel!.numberOfLines = 2
+        event2.titleLabel!.numberOfLines = 2
+        event3.titleLabel!.numberOfLines = 2
+        event4.titleLabel!.numberOfLines = 2
         
     }
     
@@ -134,55 +143,60 @@ class ViewController: UIViewController {
  
     @IBAction func eventControl(_ sender: UIButton) {                       ///RE-ORDER EVENTS
         
+        event1.titleLabel!.numberOfLines = 2
+        event2.titleLabel!.numberOfLines = 2
+        event3.titleLabel!.numberOfLines = 2
+        event4.titleLabel!.numberOfLines = 2
+        
         switch sender {
         
         case downFullButton:
             downFullButton.setImage(#imageLiteral(resourceName: "down_full_selected"), for: .highlighted)
             
-            storedDataEvent1 = event1.text!                ///FORCE UNWRAPPED OPTIONAL BECAUSE DATA IN THIS APP IS ALWAYS AVAILABLE
-            storedDataEvent2 = event2.text!
-            event1.text = storedDataEvent2
-            event2.text = storedDataEvent1
+            storedDataEvent1 = event1.titleLabel!.text!      ///FORCE UNWRAPPED OPTIONAL BECAUSE DATA IN THIS APP IS ALWAYS AVAILABLE
+            storedDataEvent2 = event2.titleLabel!.text!
+            event1.setTitle("\(storedDataEvent2)", for: .normal)
+            event2.setTitle("\(storedDataEvent1)", for: .normal)
             
         case halfUpButton:
             halfUpButton.setImage(#imageLiteral(resourceName: "up_half_selected"), for: .highlighted)
             
-            storedDataEvent1 = event1.text!
-            storedDataEvent2 = event2.text!
-            event1.text = storedDataEvent2
-            event2.text = storedDataEvent1
+            storedDataEvent1 = event1.titleLabel!.text!
+            storedDataEvent2 = event2.titleLabel!.text!
+            event1.setTitle("\(storedDataEvent2)", for: .normal)
+            event2.setTitle("\(storedDataEvent1)", for: .normal)
             
         case halfDownButton:
             halfDownButton.setImage(#imageLiteral(resourceName: "down_half_selected"), for: .highlighted)
         
-            storedDataEvent2 = event2.text!
-            storedDataEvent3 = event3.text!
-            event2.text = storedDataEvent3
-            event3.text = storedDataEvent2
+            storedDataEvent2 = event2.titleLabel!.text!
+            storedDataEvent3 = event3.titleLabel!.text!
+            event2.setTitle("\(storedDataEvent3)", for: .normal)
+            event3.setTitle("\(storedDataEvent2)", for: .normal)
             
         case halfUpButton1:
             halfUpButton1.setImage(#imageLiteral(resourceName: "up_half_selected"), for: .highlighted)
             
-            storedDataEvent2 = event2.text!
-            storedDataEvent3 = event3.text!
-            event2.text = storedDataEvent3
-            event3.text = storedDataEvent2
+            storedDataEvent2 = event2.titleLabel!.text!
+            storedDataEvent3 = event3.titleLabel!.text!
+            event2.setTitle("\(storedDataEvent3)", for: .normal)
+            event3.setTitle("\(storedDataEvent2)", for: .normal)
             
         case downHalfButton1:
             downHalfButton1.setImage(#imageLiteral(resourceName: "down_half_selected"), for: .highlighted)
             
-            storedDataEvent3 = event3.text!
-            storedDataEvent4 = event4.text!
-            event3.text = storedDataEvent4
-            event4.text = storedDataEvent3
+            storedDataEvent3 = event3.titleLabel!.text!
+            storedDataEvent4 = event4.titleLabel!.text!
+            event3.setTitle("\(storedDataEvent4)", for: .normal)
+            event4.setTitle("\(storedDataEvent3)", for: .normal)
             
         case upFullButton:
             upFullButton.setImage(#imageLiteral(resourceName: "up_full_selected"), for: .highlighted)
             
-            storedDataEvent3 = event3.text!
-            storedDataEvent4 = event4.text!
-            event3.text = storedDataEvent4
-            event4.text = storedDataEvent3
+            storedDataEvent3 = event3.titleLabel!.text!
+            storedDataEvent4 = event4.titleLabel!.text!
+            event3.setTitle("\(storedDataEvent4)", for: .normal)
+            event4.setTitle("\(storedDataEvent3)", for: .normal)
             
         default: break
        
@@ -194,7 +208,7 @@ class ViewController: UIViewController {
         
         for eventCheck1 in events {
             
-            if eventCheck1.name == event1.text! {
+            if eventCheck1.name == event1.titleLabel!.text! {
                 
                 yearEvent1 = eventCheck1.year
             }
@@ -202,7 +216,7 @@ class ViewController: UIViewController {
         
         for eventCheck2 in events {
             
-            if eventCheck2.name == event2.text! {
+            if eventCheck2.name == event2.titleLabel!.text! {
             
             yearEvent2 = eventCheck2.year
             
@@ -211,7 +225,7 @@ class ViewController: UIViewController {
         
         for eventCheck3 in events {
             
-            if eventCheck3.name == event3.text! {
+            if eventCheck3.name == event3.titleLabel!.text! {
                 
                 yearEvent3 = eventCheck3.year
             
@@ -220,7 +234,7 @@ class ViewController: UIViewController {
         
         for eventCheck4 in events {
             
-            if eventCheck4.name == event4.text {
+            if eventCheck4.name == event4.titleLabel!.text! {
                 
                 yearEvent4 = eventCheck4.year
             }
@@ -232,35 +246,19 @@ class ViewController: UIViewController {
             correctRounds += 1
             correctWrongAnswer.isHidden = false
             correctWrongAnswer.setBackgroundImage(#imageLiteral(resourceName: "next round_succes"), for: .normal)
-            
-            event1Tap()
-            event2Tap()
-            event3Tap()
-            event4Tap()
-            
+        
         }else{
             
             shakeLabel.text = "Tap events to learn more"
             correctWrongAnswer.isHidden = false
             correctWrongAnswer.setBackgroundImage(#imageLiteral(resourceName: "next round_fail"), for: .normal)
-            
-            event1Tap()
-            event2Tap()
-            event3Tap()
-            event4Tap()
-            
-           
+
         }
     }
     
-                                                                                ///SHAKE METHOD TO CHECK CORRECTNESS
+                                                                                   ///SHAKE METHOD TO CHECK CORRECTNESS
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        
-        if roundPassed == 5 {
-            
-            loadFinalScore(seconds: 2)
-        }
         
         checkCorrectEventOrder()
         gameTimer.invalidate()
@@ -272,11 +270,16 @@ class ViewController: UIViewController {
                                                                                    ///DISPLAY NEW ROUND
     @IBAction func nextRound() {
 
-        roundPassed += 1
-        displayEvents()
+        if roundPassed < 6 {
+            
+            displayEvents()
+        
+        }else{
+            
+            finalScore()
     }
-    
-                                                                                    ///DISPLAY FINAL SCORE
+}
+                                                                                  ///DISPLAY FINAL SCORE
     
     func finalScore() {
     
@@ -315,61 +318,93 @@ class ViewController: UIViewController {
         
     }
     
-
-    func event1Tap() {                                                                 ///EVENT TAPS METHOD
+    
+                                                                                    ///TAPS EVENT FOR MORE AND FIND CORRECT URL
+    @IBAction func eventTap1(_ sender: Any) {
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.loadWebView))
-        event1.isUserInteractionEnabled = true
-        event1.addGestureRecognizer(tapGesture)
-    }
-    
-    func event2Tap() {
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.loadWebView))
-        event2.isUserInteractionEnabled = true
-        event2.addGestureRecognizer(tapGesture)
-    }
-    
-    func event3Tap() {
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.loadWebView))
-        event3.isUserInteractionEnabled = true
-        event3.addGestureRecognizer(tapGesture)
-    }
-    
-    func event4Tap() {
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.loadWebView))
-        event4.isUserInteractionEnabled = true
-        event4.addGestureRecognizer(tapGesture)
-    }
-
-    
-                                                                                         ///SWITCH TO CHILDVIEW
-    
-    func loadWebView() {
-    
-        //
-    }
-    
-
-    
-                                                                                          ///HELPER METHOD
-    func loadFinalScore(seconds: Int) {
-        
-        let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
-        
-        let dispatchTime = DispatchTime.now() + Double(delay) / Double(NSEC_PER_SEC)
-        
-        //display score page
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+        if shakeLabel.text == "Tap events to learn more"{
             
-            self.finalScore()
+            for finalURLData in events {
+                
+                if finalURLData.name == event1.titleLabel!.text! {
+                    
+                    correctURLEventData = finalURLData.dataURL
+                    
+                }
+            }
+        
+            performSegue(withIdentifier: "segue", sender: nil)
+            
         }
+    }
+    
+    @IBAction func eventTap2(_ sender: Any) {
+        
+        if shakeLabel.text == "Tap events to learn more"{
+            
+            for finalURLData in events {
+                
+                if finalURLData.name == event2.titleLabel!.text! {
+                    
+                    correctURLEventData = finalURLData.dataURL
+                    
+                }
+            }
+            
+            performSegue(withIdentifier: "segue", sender: nil)
+            
+        }
+    }
+    
+    
+    @IBAction func eventTap3(_ sender: Any) {
+        
+        if shakeLabel.text == "Tap events to learn more"{
+            
+            for finalURLData in events {
+                
+                if finalURLData.name == event3.titleLabel!.text! {
+                    
+                    correctURLEventData = finalURLData.dataURL
+                    
+                }
+            }
+            
+            performSegue(withIdentifier: "segue", sender: nil)
+            
+        }
+    }
+    
+    @IBAction func eventTap4(_ sender: Any) {
+        
+        if shakeLabel.text == "Tap events to learn more"{
+            
+            for finalURLData in events {
+                
+                if finalURLData.name == event4.titleLabel!.text! {
+                    
+                    correctURLEventData = finalURLData.dataURL
+                    
+                }
+            }
+            
+            performSegue(withIdentifier: "segue", sender: nil)
+            
+        }
+    }
+                                                                                           ///PREPARING SEGUE,MANAGE WITH SUBVIEW
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let webViewControllerI : WebViewControllerI = segue.destination as! WebViewControllerI
+        webViewControllerI.webEventData = "\(correctURLEventData))"
+        
         
     }
-   
+    
 }
+
+
 
 
 

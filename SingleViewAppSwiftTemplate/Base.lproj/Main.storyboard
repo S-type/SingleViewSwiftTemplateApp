@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,55 +25,70 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aKI-da-de7" userLabel="Stack View_Labels">
                                 <rect key="frame" x="21" y="30" width="298" height="527"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Get some cool data here 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G46-ms-fI8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMD-rb-0hE">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" red="0.081747237860000002" green="0.36271858400000001" blue="0.56474064079999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Event 1">
+                                            <color key="titleColor" red="0.045141838320000002" green="0.1953943105" blue="0.3010588515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Get some cool data here 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-NC-DoO">
+                                        <connections>
+                                            <action selector="eventTap1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GCe-Gi-34h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ql-xg-UKb">
                                         <rect key="frame" x="0.0" y="133" width="298" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" red="0.081747237860000002" green="0.36271858400000001" blue="0.56474064079999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Event 2">
+                                            <color key="titleColor" red="0.045141838320000002" green="0.1953943105" blue="0.3010588515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Get some cool data here 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO5-nL-LaK">
+                                        <connections>
+                                            <action selector="eventTap2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jdr-jz-zGO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-6l-nP0" userLabel="Event 3">
                                         <rect key="frame" x="0.0" y="266" width="298" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" red="0.081747237860000002" green="0.36271858400000001" blue="0.56474064079999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Event 3">
+                                            <color key="titleColor" red="0.045141838320000002" green="0.1953943105" blue="0.3010588515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Get some cool data here 3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-gM-PtH">
+                                        <connections>
+                                            <action selector="eventTap3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkC-xs-Sz8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c40-Zl-aCS" userLabel="Event 4">
                                         <rect key="frame" x="0.0" y="399" width="298" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" red="0.081747237860000002" green="0.36271858400000001" blue="0.56474064079999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Event 4">
+                                            <color key="titleColor" red="0.045141838320000002" green="0.1953943105" blue="0.3010588515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
+                                        <connections>
+                                            <action selector="eventTap4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntB-IF-kFD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T85-iV-QmZ" userLabel="Stack View_Buttons">
@@ -280,10 +295,10 @@
                         <outlet property="correctWrongAnswer" destination="3WH-Hk-FdW" id="0DL-Jm-yJn"/>
                         <outlet property="downFullButton" destination="Lgm-B6-kZQ" id="hDt-Iv-PP6"/>
                         <outlet property="downHalfButton1" destination="LN4-vo-OA1" id="0j7-6L-tyt"/>
-                        <outlet property="event1" destination="G46-ms-fI8" id="WNE-lL-jWk"/>
-                        <outlet property="event2" destination="seZ-NC-DoO" id="XYp-7Z-w80"/>
-                        <outlet property="event3" destination="KO5-nL-LaK" id="mDQ-ep-Rki"/>
-                        <outlet property="event4" destination="ky6-gM-PtH" id="tUz-If-hEe"/>
+                        <outlet property="event1" destination="AMD-rb-0hE" id="jTt-XF-IQL"/>
+                        <outlet property="event2" destination="2ql-xg-UKb" id="FnG-Ic-y1l"/>
+                        <outlet property="event3" destination="zoa-6l-nP0" id="IvT-sO-m6A"/>
+                        <outlet property="event4" destination="c40-Zl-aCS" id="tmJ-5t-SM6"/>
                         <outlet property="halfDownButton" destination="Bvj-mQ-EQu" id="x85-8J-nWr"/>
                         <outlet property="halfUpButton" destination="BUI-gP-mU1" id="1X7-VL-hwS"/>
                         <outlet property="halfUpButton1" destination="8Su-6q-ceo" id="swW-Vt-bxz"/>
@@ -293,6 +308,7 @@
                         <outlet property="shakeLabel" destination="Z0e-rf-Yzf" id="GRZ-YC-YKn"/>
                         <outlet property="timerLabel" destination="Yyh-Mf-wik" id="kLs-HY-Epb"/>
                         <outlet property="upFullButton" destination="ztw-su-fDK" id="OwQ-Rj-7r2"/>
+                        <segue destination="xx4-FW-dsu" kind="show" identifier="segue" id="L4P-Bu-3hR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -344,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0w-lQ-m5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2529" y="107"/>
+            <point key="canvasLocation" x="-2452" y="107"/>
         </scene>
     </scenes>
     <resources>
